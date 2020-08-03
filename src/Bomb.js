@@ -13,11 +13,18 @@ class Bomb extends React.Component {
             return "Boom!"
         }
         else {
+            window.setTimeout(this.changeSeconds, 1000)
             return `${this.state.secondsLeft} seconds left before I go boom!`
         }
     }
 
+    changeSeconds = () => {
+        let seconds = this.state.secondsLeft
+        this.setState({secondsLeft: --seconds})
+    }
+
     render () {
+        console.log('render')
         return (
             <h2>{this.displayString()}</h2>
         )
