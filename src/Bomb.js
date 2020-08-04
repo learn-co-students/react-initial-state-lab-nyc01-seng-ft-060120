@@ -11,11 +11,8 @@ class Bomb extends Component {
 
     render() {
         let secondsLeft = this.state.secondsLeft
-        if (secondsLeft > 0) {
-        return <p>{secondsLeft} seconds left before I go boom!</p>
-        } else {
-            return <p>Boom!</p>
-        } 
+        let text = secondsLeft > 0 ? <p>{secondsLeft} seconds left before I go boom!</p> : <p>Boom!</p>
+        return text
     }
 }
 
